@@ -4,7 +4,7 @@ layout: default
 filename: index.md
 --- 
 ## RESUMEN DE LA SITUACIÓN ACTUAL EN CANTABRIA
-![Resumen](https://raw.githubusercontent.com/saul-torres/covid_cantabria/master/images/regional_evolucion.jpg)
+![Resumen](https://raw.githubusercontent.com/saul-torres/covid_cantabria/main/images/regional_evolucion.jpg)
 
 Este sitio web pretende ser un complemento (y no un sustituto) a la información recopilada por el Servicio Cántabro de Salud (SCS) en su web dedicada al [COVID19](https://www.scsalud.es/web/scs/coronavirus), así como la recopilada por el Instituto Cántabro de Estadística (ICANE) en su web [COVID19](https://www.icane.es/covid19/dashboard/home/home). Los datos que aquí se representan provienen principalmente de este último, aunque por cuestiones prácticas y de accesibilidad pueden estar tomados de otros repositorios que recopilan los datos oficiales y los transforman para hacer más accesibles.
 ### Fuentes de los datos
@@ -20,7 +20,7 @@ Este sitio web pretende ser un complemento (y no un sustituto) a la información
 
 ### Tasa bruta del número de casos activos por cada 100.000 habitantes 
 
-![Evolución de la tasa](https://raw.githubusercontent.com/saul-torres/covid_cantabria/master/images/municip_incidenc_evolut.jpg)
+![Evolución de la tasa](https://raw.githubusercontent.com/saul-torres/covid_cantabria/main/images/municip_incidenc_evolut.jpg)
 
 
 # Notas metodológicas
