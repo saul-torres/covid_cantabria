@@ -2,10 +2,7 @@ library(readr)
 library(RCurl)
 library(jsonlite)
 
-#setwd("E:/Onedrive/OneDrive - Universidad de Cantabria/07 - R Code/covid_cantabria/")
-setwd("C:/Users/Saul/OneDrive - Universidad de Cantabria/07 - R Code/covid_cantabria/")
-
-
+# Regional population
 cant_popul <- 581078
 
 
