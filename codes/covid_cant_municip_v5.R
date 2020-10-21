@@ -3,10 +3,7 @@ library(readr)
 library(RCurl)
 library(jsonlite)
 
-#setwd("E:/Onedrive/OneDrive - Universidad de Cantabria/07 - R Code/covid_cantabria/")
-setwd("C:/Users/Saul/OneDrive - Universidad de Cantabria/07 - R Code/covid_cantabria/")
-
-
+# Load municipalities names
 municip_nombres <- read_delim("data/cant_municios_nombres.csv", 
                               ";", escape_double = FALSE, locale = locale(encoding = "ISO-8859-1"), 
                               trim_ws = TRUE)
