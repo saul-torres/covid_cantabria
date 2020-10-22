@@ -166,7 +166,7 @@ p_dailyd <- ggplot(region_datos_df, aes(date, new_deceased)) +
             angle = 90, vjust = "inward", hjust = "inward") + 
   labs(subtitle = "FALLECIMIENTOS DIARIOS",
        #caption = "Datos: ICANE",
-       #x = "Fecha",
+       x = "",
        y = "Fallecimientos",
        colour = "Casos activos") + 
   theme(legend.position = "none")
@@ -215,6 +215,11 @@ p_test <- ggplot(test_data, aes(x=date, y=value, fill=variable)) +
 p_combine <- grid.arrange(p_incid, p_active, p_dailyd, p_test, p_pcr,  
                           ncol = 1, heights = c(1.1, 1, 1, 1.2, 1))
 
-ggsave("images/regional_evolucion.jpg", p_combine,
+ggsave("images/regional_summary.png", p_combine,
        width = 30, height = 40, units = "cm")
+ggsave("images/regional_incid.png", p_incid,
+       width = 30, height = 40, units = "cm")
+ggsave("images/regional_active.png", p_active,
+       width = 30, height = 40, units = "cm")
+
 

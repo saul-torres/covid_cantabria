@@ -68,5 +68,5 @@ ggplot(cantabr_datos_df,
   facet_wrap( ~ nombre_mun, ncol=6) + 
   theme(legend.position = "none")
 
-ggsave("images/municip_incidenc_evolut.jpg",
+ggsave("images/municip_incidenc_evolut.png",
        width = 30, height = 90, units = "cm")
