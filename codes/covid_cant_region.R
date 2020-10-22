@@ -217,9 +217,58 @@ p_combine <- grid.arrange(p_incid, p_active, p_dailyd, p_test, p_pcr,
 
 ggsave("images/regional_summary.png", p_combine,
        width = 30, height = 40, units = "cm")
-ggsave("images/regional_incid.png", p_incid,
-       width = 30, height = 40, units = "cm")
-ggsave("images/regional_active.png", p_active,
-       width = 30, height = 40, units = "cm")
+
+### INDIVIDUAL GRAPHS
+
+# INCIDENCIA
+p_incid_indiv <- ggplot(region_datos_df, aes(date, incid_14d)) +
+  geom_point(aes(colour = incid_14d)) +
+  scale_colour_gradientn(limits = c(0, 600),
+                         breaks = c(0, 250, 500, 1250),
+                         colours = c("#bdbdbd", "#feb24c", "#de2d26", "#a50f15")) +
+  geom_hline(yintercept=500, alpha=.75, size=0.25, colour="#de2d26") +
+  geom_hline(yintercept=250, alpha=.75, size=0.25, colour="#feb24c") +
+  coord_cartesian(xlim=c(region_datos_df$date[length(region_datos_df$date)]-60,region_datos_df$date[length(region_datos_df$date)]+1),
+                  ylim=c(0,600)) +
+  geom_vline(xintercept=as.Date("04/05/2020", format = "%d/%m/%Y"), colour="#a50f15") +
+  geom_vline(xintercept=as.Date("11/05/2020", format = "%d/%m/%Y"), colour="#de2d26") +
+  geom_vline(xintercept=as.Date("25/05/2020", format = "%d/%m/%Y"), colour="#fb6a4a") +
+  geom_vline(xintercept=as.Date("08/06/2020", format = "%d/%m/%Y"), colour="#fc9272") +
+  geom_vline(xintercept=as.Date("19/06/2020", format = "%d/%m/%Y"), colour="#addd8e") +
+  labs(title = paste("EVOLUCIÓN COVID19 EN CANTABRIA (", fecha_dia_plot, ")", sep=""),
+       subtitle = "INCIDENCIA (acumulado 14 días)",
+       x = "",
+       y = "Incidencia",
+       colour = "Incidencia",
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.") + 
+  theme(legend.position = "none")
+
+# CASOS ACTIVOS
+p_active_indiv <- ggplot(region_datos_df, aes(date, active)) +
+  geom_point(aes(colour = active)) +
+  scale_colour_gradientn(limits = c(0,3000),
+                         breaks = c(0, 1250, 2500, 1250),
+                         colours = c("#bdbdbd", "#feb24c", "#de2d26", "#a50f15")) +
+  coord_cartesian(xlim=c(region_datos_df$date[length(region_datos_df$date)]-60,region_datos_df$date[length(region_datos_df$date)]+1),
+                  ylim=c(0,3000)) +
+  geom_vline(xintercept=as.Date("04/05/2020", format = "%d/%m/%Y"), colour="#a50f15") +
+  geom_vline(xintercept=as.Date("11/05/2020", format = "%d/%m/%Y"), colour="#de2d26") +
+  geom_vline(xintercept=as.Date("25/05/2020", format = "%d/%m/%Y"), colour="#fb6a4a") +
+  geom_vline(xintercept=as.Date("08/06/2020", format = "%d/%m/%Y"), colour="#fc9272") +
+  geom_vline(xintercept=as.Date("19/06/2020", format = "%d/%m/%Y"), colour="#addd8e") +
+  labs(title = paste("EVOLUCIÓN COVID19 EN CANTABRIA (", fecha_dia_plot, ")", sep=""),
+       subtitle = "CASOS ACTIVOS",
+       x = "",
+       y = "Casos activos",
+       colour = "Casos activos",
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.") + 
+  theme(legend.position = "none")
+
+
+
+ggsave("images/regional_incid.png", p_incid_indiv,
+       width = 30, height = 8, units = "cm")
+ggsave("images/regional_active.png", p_active_indiv,
+       width = 30, height = 8, units = "cm")
 
 
