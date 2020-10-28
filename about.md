@@ -51,3 +51,9 @@ Y llegamos a la situación actual de este pequeño proyecto que va creciendo por
 ### Parte V. ¿A dónde vamos?
 
 Bueno... Quién sabe. Día tras día se me ocurren nuevas formas de mejorar todo esto. Nuevas gráficas, nuevos datos que analizar. Lo que sin duda tengo pendiente (y posiblemente sea ahora mismo mi prioridad) es describir bien todo el proceso que he seguido. Paso a paso. Y abierto. Porque igual que yo un día me lié la manta a la cabeza y empecé este pequeño proyecto, puede que alguien se anime y realice algo similar en algún otro lugar del mundo. O cualquier otra movida. Y al igual que yo me he nutrido del trabajo de muchos otros (bendito Google, bendita comunidad de `R`), otros pueden llegar a alimentarse del mío. Es lo mínimo.
+
+### Epílogo. Atrévete y baila
+
+No soy programador. Durante mis estudios (soy ingeniero de caminos) odié con todas mis fuerzas la asignatura entonces llamada "Programación". Una vez aprobada (con un magistral "el dueño del pez es el alemán") nunca más quise saber de programación. Hasta que por cosas del trabajo me tuve que ir acercando poco a poco. No tuve más remedio. Aprendí a usar [`R`](https://cran.r-project.org/doc/contrib/rdebuts_es.pdf) . Usar, que no a saber programar. Hago códigos que funcionan. Que a mí me solucionan la vida muchas veces. Que me permiten hacer cosas como esta web, este proyecto. Que posiblemente no sean nada eficientes, pero son eficaces.
+
+Después de aquella asignatura, nunca pensé que me podría gustar programar. Y aquí estamos. Todo ha sido cuestión de atreverse a superar un reto por un camino desconocido. Aprender. Y acabar bailando.
