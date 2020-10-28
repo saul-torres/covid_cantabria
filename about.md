@@ -30,7 +30,7 @@ Hasta que la publicación de los datos (especialmente los municipales) dejó de 
 
 En septiembre todo parecía indicar que volvíamos a la ola. Los casos volvían a subir. Todo parecía volver a complicarse. Todo iba a peor. Y los datos (y sus representaciones, y la comunicación en general) seguían siendo (en mi humilde opinión) mejorables.
 
-Debo reconocer que algo habíamos mejorado. El Instituto Cántabro de Estadística (ICANE)[https://www.icane.es/] había creado su propia web para controlar la Situación epidemiológica del Coronavirus (COVID-19) en Cantabria ([ésta es su web](https://www.icane.es/covid19/dashboard/home/home)). Y reconozco igualmente que está muy bien. Tiene mucha información, bastantes representaciones, detalle a nivel municipal... Sin embargo, yo me había ya habituado a *mis* representaciones.
+Debo reconocer que algo habíamos mejorado. El Instituto Cántabro de Estadística [ICANE](https://www.icane.es/) había creado su propia web para controlar la Situación epidemiológica del Coronavirus (COVID-19) en Cantabria ([ésta es su web](https://www.icane.es/covid19/dashboard/home/home)). Y reconozco igualmente que está muy bien. Tiene mucha información, bastantes representaciones, detalle a nivel municipal... Sin embargo, yo me había ya habituado a *mis* representaciones.
 
 Me sorprendió que la web del ICANE mostraba sus representaciones a nivel municipal y diario. Sin saltos en las series. Todos los días (¡incluso los fines de semana). ¿Dónde estaban esos datos? ¿Por qué no estaban abiertos, publicados para utilizarlos? Bueno, aunque eso era un problema (datos públicos, abiertos y en formatos accesibles por favor) no era nada que no pudiéramos solucionar con un poco de [*web scrapping*](https://es.wikipedia.org/wiki/Web_scraping).
 
