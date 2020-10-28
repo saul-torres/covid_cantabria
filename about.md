@@ -19,6 +19,7 @@ En Cantabria los datos nos empezaron a llegar a través del [Sistema Cántabro d
 Pero había mucho más dato, mucha más chicha. Por ejemplo, Cantabria fue una de las primeras comunidades autónomas (hasta donde yo me sé) que empezó a publicar los datos a nivel municipal. El [visor](https://experience.arcgis.com/experience/9fc123d100e540dda44529d5aff5fd67) del SCS lo sigue haciendo. Pero, ¿y la evolución municipal de las tasas?
 
 Durante aquel tiempo del confinamiento nació esta web. Y empecé a analizar la evolución de la incidencia y del número de casos tanto para toda la región como para cada uno de los municipios de Cantabria.
+
 <img src="https://raw.githubusercontent.com/saul-torres/covid_cantabria/main/images/municip_incidenc_evolut.png" width="250">
 
 En aquella época (y así sigue siendo actualmente) el SCS publicaba diariamente los datos en formato CSV y Excel. Servidor se encargaba diariamente de acceder, descargar los datos, reejecutar las gráficas, subirlas a GitHub, y asegurarse que todo salía correcto. Un ligero engorro de 10-15 minutos al día que no me suponían mayor problema.
