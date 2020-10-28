@@ -3,18 +3,16 @@ title: COVID Cantabria
 layout: default
 filename: index.md
 --- 
+
+Este sitio web pretende ser un complemento (y no un sustituto) a la información recopilada por el Servicio Cántabro de Salud (SCS) en su web dedicada al [COVID19](https://www.scsalud.es/web/scs/coronavirus), así como la recopilada por el Instituto Cántabro de Estadística (ICANE) en su web [COVID19](https://www.icane.es/covid19/dashboard/home/home). Los datos que aquí se representan provienen principalmente de este último, aunque por cuestiones prácticas y de accesibilidad pueden estar tomados de otros repositorios que recopilan los datos oficiales y los transforman para hacer más accesibles.
+
 ## RESUMEN DE LA SITUACIÓN ACTUAL EN CANTABRIA
 ![Resumen](https://raw.githubusercontent.com/saul-torres/covid_cantabria/main/images/regional_summary.png)
 
-Este sitio web pretende ser un complemento (y no un sustituto) a la información recopilada por el Servicio Cántabro de Salud (SCS) en su web dedicada al [COVID19](https://www.scsalud.es/web/scs/coronavirus), así como la recopilada por el Instituto Cántabro de Estadística (ICANE) en su web [COVID19](https://www.icane.es/covid19/dashboard/home/home). Los datos que aquí se representan provienen principalmente de este último, aunque por cuestiones prácticas y de accesibilidad pueden estar tomados de otros repositorios que recopilan los datos oficiales y los transforman para hacer más accesibles.
-### Fuentes de los datos
-* Las series de datos están obtenidas de la web específica COVID19 del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/covid19/dashboard/home/home).
-* Los datos de población (a 1 de enero de 2020) están obtenidos del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/data/municipal-register-gender-municipality#timeseries).
-* Las áreas de salud se han obtenido del [Servicio Cántabro de Salud](http://saludcantabria.es/index.php/areas-y-zonas-basicas-de-salud).
-* Otros repositorios accesibles:
-  * [escovid19data](https://github.com/montera34/escovid19data)
-  * [Datadista](https://github.com/datadista/datasets/tree/master/COVID%2019)
-
+## CANALES ALTERNATIVOS
+Hay un par de vías por las que recibir información actualizada diariamente:
+* Twitter: [@covidcantabria](https://www.twitter.com/covidcantabria)
+* Telegram: [@covidcantabria](https://t.me/covidcantabria)
 
 # REPRESENTACIÓN DE DATOS A NIVEL MUNICIPAL
 
@@ -22,7 +20,14 @@ Este sitio web pretende ser un complemento (y no un sustituto) a la información
 
 ![Evolución de la tasa](https://raw.githubusercontent.com/saul-torres/covid_cantabria/main/images/municip_incidenc_evolut.png)
 
-
+# Fuentes de los datos
+* Las series de datos están obtenidas de la web específica COVID19 del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/covid19/dashboard/home/home).
+* Los datos de población (a 1 de enero de 2020) están obtenidos del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/data/municipal-register-gender-municipality#timeseries).
+* Las áreas de salud se han obtenido del [Servicio Cántabro de Salud](http://saludcantabria.es/index.php/areas-y-zonas-basicas-de-salud).
+* Otros repositorios accesibles (aunque no utilizados):
+  * [escovid19data](https://github.com/montera34/escovid19data)
+  * [Datadista](https://github.com/datadista/datasets/tree/master/COVID%2019)
+  
 # Notas metodológicas
 * Los datos del SCS generalmente atribuyen un número de casos a `39300 Otros`. Este dato en principio no se representa.
 * En los mapas pueden aparecer algunos municipios en color gris. En estos municipios el dato representado se escapa del intervalo elegido para la representación de los datos. Se ha elegido esta escala para poder apreciar diferencias entre municipios. Ajustar a los *outliers* implicaría no poder apreciar a simple vista diferencias entre municipios.
