@@ -67,9 +67,9 @@ ggplot(cantabr_datos_df,
                   ylim = c(0,1200)) + 
   geom_hline(yintercept=500, alpha=.75, size=0.25, colour="#de2d26") +
   geom_hline(yintercept=250, alpha=.75, size=0.25, colour="#feb24c") +
-  labs(title = paste("INCIDENCIA COVID19 (", fecha_dia_plot, ")", sep=""),
+  labs(title = paste("CASOS COVID19 (", fecha_dia_plot, ")", sep=""),
        subtitle = "(Tasa bruta del número de casos activos por cada 100.000 habitantes.)",
-       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.",
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: @covidcantabria",
        x = "Fecha",
        y = "Incidencia",
        colour = "Incidencia") +
@@ -81,9 +81,6 @@ ggsave("images/municip_incidenc_evolut.png",
 
 
 # INCIDENCIA EN BOLOS
-y_lab_1 <- levels(cantabr_datos_df$nombre_mun)
-y_lab_2 <- reorder(cantabr_datos_df$nombre_mun, desc(cantabr_datos_df$nombre_mun))
-
 ggplot(cantabr_datos_df,
        aes(x = fecha, reorder(nombre_mun, desc(nombre_mun)))) +
   geom_point(aes(colour = semaforo)) +
@@ -94,12 +91,12 @@ ggplot(cantabr_datos_df,
                "Bajo (entre 25 y 50 casos)",
                "Medio (entre 50 y 150 casos)",
                "Alto (entre 150 y 250 casos)",
-               "Extremo (más de 250 casos")) +
+               "Extremo (más de 250 casos)")) +
   coord_cartesian(xlim=c(cantabr_datos_df$fecha[length(cantabr_datos_df$fecha)]-60,cantabr_datos_df$fecha[length(cantabr_datos_df$fecha)]+1)) +
   labs(title = paste("CASOS COVID19 (", fecha_dia_plot, ")", sep=""),
        subtitle = "(Tasa bruta del número de casos activos
        por cada 100.000 habitantes.)",
-       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.",
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: @covidcantabria",
        x = "Fecha",
        y = "Municipio", 
        colour = "Nivel de riesgo") +
