@@ -41,11 +41,19 @@ cantabr_datos_df <- merge(x = cantabr_datos_df, y = municip_nombres,
 cantabr_datos_df$fecha <- as.Date(as.character(cantabr_datos_df$fecha), format = "%Y-%m-%d")
 cantabr_datos_df$tasa_incid <- as.numeric(cantabr_datos_df$tasa_incid)
 
+cantabr_datos_df$semaforo <- 0
+cantabr_datos_df$semaforo[cantabr_datos_df$tasa_incid <=25] <- "Nueva normalidad"
+cantabr_datos_df$semaforo[cantabr_datos_df$tasa_incid > 25 & cantabr_datos_df$tasa_incid <=50] <- "Bajo"
+cantabr_datos_df$semaforo[cantabr_datos_df$tasa_incid > 50 & cantabr_datos_df$tasa_incid <=150] <- "Medio"
+cantabr_datos_df$semaforo[cantabr_datos_df$tasa_incid > 150 & cantabr_datos_df$tasa_incid <=250] <- "Alto"
+cantabr_datos_df$semaforo[cantabr_datos_df$tasa_incid > 250] <- "Extremo"
+
 write.csv2(cantabr_datos_df, "data/municip_incidenc_evolut.csv")
 
 
 # GRAFICOS TODOS LOS MUNICIPIOS SERIE TEMPORAL
 library(ggplot2)
+library(plyr)
 fecha_dia_plot <- unique(cantabr_datos_df$fecha)[length(unique(cantabr_datos_df$fecha))]
 
 # INCIDENCIA
@@ -70,3 +78,35 @@ ggplot(cantabr_datos_df,
 
 ggsave("images/municip_incidenc_evolut.png",
        width = 30, height = 90, units = "cm")
+
+
+# INCIDENCIA EN BOLOS
+y_lab_1 <- levels(cantabr_datos_df$nombre_mun)
+y_lab_2 <- reorder(cantabr_datos_df$nombre_mun, desc(cantabr_datos_df$nombre_mun))
+
+ggplot(cantabr_datos_df,
+       aes(x = fecha, reorder(nombre_mun, desc(nombre_mun)))) +
+  geom_point(aes(colour = semaforo)) +
+  scale_colour_manual(
+    values = c("#31a354", "#fed976", "#feb24c", "#de2d26", "#a50f15"),
+    breaks = c("Nueva normalidad", "Bajo", "Medio", "Alto", "Extremo"),
+    labels = c("Nueva normalidad (menos de 25 casos)",
+               "Bajo (entre 25 y 50 casos)",
+               "Medio (entre 50 y 150 casos)",
+               "Alto (entre 150 y 250 casos)",
+               "Extremo (más de 250 casos")) +
+  coord_cartesian(xlim=c(cantabr_datos_df$fecha[length(cantabr_datos_df$fecha)]-60,cantabr_datos_df$fecha[length(cantabr_datos_df$fecha)]+1)) +
+  labs(title = paste("CASOS COVID19 (", fecha_dia_plot, ")", sep=""),
+       subtitle = "(Tasa bruta del número de casos activos
+       por cada 100.000 habitantes.)",
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.",
+       x = "Fecha",
+       y = "Municipio", 
+       colour = "Nivel de riesgo") +
+  guides(colour=guide_legend(nrow=5, byrow=TRUE)) +
+  theme(legend.position = "bottom")
+
+ggsave("images/municip_casos_bolos_evolut.png",
+       width = 15, height = 45, units = "cm")
+  
+
