@@ -120,7 +120,7 @@ p_incid <- ggplot(region_datos_df, aes(date, incid_14d)) +
        x = "",
        y = "Incidencia",
        colour = "Incidencia",
-       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega."") + 
+       caption = "Datos: ICANE. Gob. Cantabria. Elaboración: Saúl Torres-Ortega.") + 
   theme(legend.position = "none")
 ```
 
