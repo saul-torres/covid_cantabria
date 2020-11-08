@@ -180,7 +180,7 @@ library(telegram.bot)
 # Initialize TELEGRAM bot
 telegram_bot <- Bot(token = "token")
 ## Channel ID
-channel_id <- "channel""
+channel_id <- "channel"
 
 # Send message
 telegram_bot$sendMessage(chat_id = channel_id, text = message_intro)
@@ -226,5 +226,39 @@ post_tweet(status = message_info_1,
            in_reply_to_status_id = reply_id)
 ```
 
-
 ### AWS server
+
+Si alguien acaba aquí dudando entre montar un servidor en algún tipo de ordenador personal en casa, o hacerlo en la nube, no hagáis como yo y perdáis el tiempo. La respuesta es [Amazon Web Services](https://aws.amazon.com/es/).
+
+En cinco minutos puedes tener tu propio servidor dedicado, con RStudio Server montado sobre él y ejecutando. [Este tutorial](https://towardsdatascience.com/how-to-run-rstudio-on-aws-in-under-3-minutes-for-free-65f8d0b6ccda) lo deja claro clarinete.
+
+El siguiente paso es programar los scripts para que nuestro servidor los ejecute automáticamente todos los días (en este caso, pero aceptamos cualquier tipo de programación). Aquí yo recomiendo [`cronR`](https://cran.r-project.org/web/packages/cronR/vignettes/cronR.html).
+Aunque se pueden programar los scripts mediante código, yo he tenido mis más y mis menos con las rutas de acceso. Recomiendo usar el _addin_ que se instala en `Rstudio` al instalar el paquete `install.packages(cronR)`. En la viñeta anterior viene detallado el proceso para ejecutarlo y programar cualquier tarea.
+
+Es importante destacar que cualquier ruta que especifiquemos en un script a ejecutar bajo `cronR` tiene que ser absoluta. Nada de directorios relativos y demás. Absoluta o tendremos problemas.
+
+La última cuestión es guardar nuestras imágenes anteriores de forma que pueda ser accesibles desde el exterior (por ejemplo, insertándolas en la web de @covidcantabria). Para ello tenemos que enlazar nuestro servidor AWS (que será una instancia EC3) con nuestro almacenamiento (S3). Ello implica seguir este [otro tutorial](https://www.gormanalysis.com/blog/connecting-to-aws-s3-with-r/) detallado.
+
+Básicamente:
+- [x] Crear bucket.
+- [x] Crear un usuario y darle acceso. Copiar sus claves de acceso.
+- [x] Recurrir a `aws.s3`.
+
+```r
+library("aws.s3")
+
+MY_AWS_ACCESS_KEY_ID = "access_key"
+MY_AWS_SECRET_ACCESS_KEY = "secret_access_key"
+MY_AWS_DEFAULT_REGION ="region"
+
+put_object(file = "/home/rstudio/covid_cantabria/images/regional_summary.png",
+           object = "regional_summary.png",
+           bucket = "covidcantabria",
+           acl=c("public-read"),
+           key = MY_AWS_ACCESS_KEY_ID,
+           secret = MY_AWS_SECRET_ACCESS_KEY,
+           region = MY_AWS_DEFAULT_REGION)
+```
+
+Creo que no me he dejado nada.
+Si alguien tiene alguna duda o pregunta, puedo intentar echar una mano.
