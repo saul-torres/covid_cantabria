@@ -20,6 +20,8 @@ Tasa bruta del número de casos activos por cada 100.000 habitantes
 
 ![Evolución de la tasa](https://covidcantabria.s3-eu-west-1.amazonaws.com/municip_bolos_evolut.png)
 
+![Evolución de la tasa](https://covidcantabria.s3-eu-west-1.amazonaws.com/municip_incidenc_evolut.png)
+
 # Fuentes de los datos
 * Las series de datos están obtenidas de la web específica COVID19 del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/covid19/dashboard/home/home).
 * Los datos de población (a 1 de enero de 2020) están obtenidos del [Instituto Cántabro de Estadística  - ICANE](https://www.icane.es/data/municipal-register-gender-municipality#timeseries).
