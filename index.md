@@ -14,9 +14,9 @@ Hay un par de vías por las que recibir información actualizada diariamente:
 * Twitter: [@covidcantabria](https://www.twitter.com/covidcantabria)
 * Telegram: [@covidcantabria](https://t.me/covidcantabria)
 
-# REPRESENTACIÓN DE DATOS A NIVEL MUNICIPAL
+## REPRESENTACIÓN DE DATOS A NIVEL MUNICIPAL
 
-### Tasa bruta del número de casos activos por cada 100.000 habitantes 
+Tasa bruta del número de casos activos por cada 100.000 habitantes 
 
 ![Evolución de la tasa](https://covidcantabria.s3-eu-west-1.amazonaws.com/municip_bolos_evolut.png)
 
